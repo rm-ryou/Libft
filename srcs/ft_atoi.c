@@ -27,7 +27,7 @@ int	ft_atoi(const char *str)
 	num = 0;
 	flg = 0;
 	i = ft_strlen(str);
-	if (!ft_strncmp(str, "-2147483648", i))
+	if (str == "-2147483648")
 		return (-2147483648);
 	i = ft_str_check(str, &flg);
 	while (str[i] >= '0' && str[i] <= '9')
