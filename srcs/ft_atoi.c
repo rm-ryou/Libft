@@ -17,30 +17,26 @@ static int	ft_str_check(const char *str, int *flg)
 	return (i);
 }
 
+
 int	ft_atoi(const char *str)
 {
-	int	num;
-	int	flg;
-	int	tmp;
-	int	i;
+	size_t	num;
+    int     i;
+    int     flg;
 
 	num = 0;
-	flg = 0;
-	i = ft_strlen(str);
-	if (str == "-2147483648")
-		return (-2147483648);
-	i = ft_str_check(str, &flg);
+    flg = 0;
+    i = ft_str_check(str, &flg);
 	while (str[i] >= '0' && str[i] <= '9')
-	{
-		tmp = str[i] - '0';
-		if (((num * 10 + tmp) / 10 != num) && flg)
-			return (0);
-		else if (((num * 10 + tmp) / 10 != num) && !flg)
-			return (-1);
-		num = num * 10 + tmp;
-		i++;
-	}
-	if (flg > 0)
-		num *= -1;
-	return (num);
+    {
+        num = num * 10 + (str[i] - '0');
+        i++;
+    }
+    if (flg)
+        num *= -1;
+    if (num < -2147483648 && flg)
+        return (0);
+    else if (num > 2147483647 && !flg)
+        return (-1);
+    return ((int)num);
 }
