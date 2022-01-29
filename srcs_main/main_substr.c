@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_split.c                                       :+:      :+:    :+:   */
+/*   main_substr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmoriya <rmoriya@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/28 23:23:45 by rmoriya           #+#    #+#             */
-/*   Updated: 2022/01/29 17:51:02 by rmoriya          ###   ########.fr       */
+/*   Created: 2022/01/29 17:53:12 by rmoriya           #+#    #+#             */
+/*   Updated: 2022/01/29 17:59:51 by rmoriya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int main(int argc, char **argv)
+int mian(int argc, char **argv)
 {
-	//char	**res = ft_split(argv[1], *argv[2]);
-	char **res = ft_split("0", '0');
-	while (*res)
-	{
-		printf("[%s]", *res);
-		res++;
-	}
-	putchar('\n');
-	return (0);
+    char *res = ft_substr(argv[1] , 100, 1);
+    
+    printf("%s\n", res);
+    return (0);
 }

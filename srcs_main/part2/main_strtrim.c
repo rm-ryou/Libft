@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_split.c                                       :+:      :+:    :+:   */
+/*   main_strtrim.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmoriya <rmoriya@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/28 23:23:45 by rmoriya           #+#    #+#             */
-/*   Updated: 2022/01/29 17:51:02 by rmoriya          ###   ########.fr       */
+/*   Created: 2022/01/29 18:02:03 by rmoriya           #+#    #+#             */
+/*   Updated: 2022/01/29 18:03:37 by rmoriya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,11 @@
 
 int main(int argc, char **argv)
 {
-	//char	**res = ft_split(argv[1], *argv[2]);
-	char **res = ft_split("0", '0');
-	while (*res)
-	{
-		printf("[%s]", *res);
-		res++;
-	}
-	putchar('\n');
-	return (0);
+    char *s1 = argv[1];
+    char *set = argv[2];
+    char *res;
+
+    res = ft_strtrim(s1, set);
+    printf("%s\n", res);
+    return (0);
 }
