@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: rmoriya   <rmoriya@student.42tokyo.jp      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/28 23:23:45 by rmoriya           #+#    #+#             */
+/*   Updated: 2022/01/29 09:07:16 by rmoriya          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 static size_t	ft_words_count(char const *s, char c)
@@ -80,9 +92,7 @@ char	**ft_split(char const *s, char c)
 {
 	char		**str;
 	size_t		words;
-	size_t		i;
 
-	i = 0;
 	if (!s)
 		return (NULL);
 	words = ft_words_count(s, c);

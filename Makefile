@@ -52,10 +52,10 @@ B_OBJS = $(B_SRCS:.c=.o)
 $(NAME): $(OBJS)
 	ar rcs $@ $(OBJS)
 
-$(NAME):$(OBJS) $(B_OBJS)
+bonus:$(OBJS) $(B_OBJS)
 	ar rcs $(NAME) $(OBJS) $(B_OBJS)
 
-all:$(NAME)
+all:$(NAME) bonus
 
 clean:
 	rm -f $(OBJS) $(B_OBJS)
