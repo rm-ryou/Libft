@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_split.c                                       :+:      :+:    :+:   */
+/*   main_putnbr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rmoriya <rmoriya@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/28 23:23:45 by rmoriya           #+#    #+#             */
-/*   Updated: 2022/01/29 18:54:49 by rmoriya          ###   ########.fr       */
+/*   Created: 2022/01/29 18:09:06 by rmoriya           #+#    #+#             */
+/*   Updated: 2022/01/29 19:39:58 by rmoriya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include"libft.h"
 
 int main(int argc, char **argv)
 {
-	//char	**res = ft_split(argv[1], *argv[2]);
-	char **res = ft_split("lddzfzfzfzzaa", 'z');
-	while (*res)
-	{
-		printf("[%s]", *res);
-		res++;
-	}
-	putchar('\n');
-	return (0);
+    int n = ft_atoi(argv[1]);
+    ft_putnbr_fd(n, 1);
+    putchar('\n');
+    return (0);
 }

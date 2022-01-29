@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmoriya   <rmoriya@student.42tokyo.jp      +#+  +:+       +#+        */
+/*   By: rmoriya <rmoriya@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 23:23:45 by rmoriya           #+#    #+#             */
-/*   Updated: 2022/01/28 23:23:45 by rmoriya          ###   ########.fr       */
+/*   Updated: 2022/01/29 19:09:30 by rmoriya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	s2_len;
 	size_t	i;
 
-	if (!s1 || !s2)
+	if (!s1)
 		return (NULL);
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);
@@ -27,14 +27,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (!str)
 		return (NULL);
 	i = 0;
+	while (*s1)
+		str[i++] = *s1++;
 	while (*s2)
-	{
-		if (*s1 != '\0')
-			str[i] = *s1++;
-		else
-			str[i] = *s2++;
-		i++;
-	}
+		str[i++] = *s2++;
 	str[i] = '\0';
 	return (str);
 }
