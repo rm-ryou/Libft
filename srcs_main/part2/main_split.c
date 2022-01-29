@@ -6,7 +6,7 @@
 /*   By: rmoriya <rmoriya@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 23:23:45 by rmoriya           #+#    #+#             */
-/*   Updated: 2022/01/29 15:06:55 by rmoriya          ###   ########.fr       */
+/*   Updated: 2022/01/29 17:39:11 by rmoriya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main(int argc, char **argv)
 {
 	//char	**res = ft_split(argv[1], *argv[2]);
-	char **res = ft_split("     4  2 tok  yo     !    ", ' ');
+	char **res = ft_split("MY_SPLIT__!_", '\0');
 	while (*res)
 	{
 		printf("[%s]", *res);

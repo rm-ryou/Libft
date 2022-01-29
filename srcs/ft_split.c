@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmoriya   <rmoriya@student.42tokyo.jp      +#+  +:+       +#+        */
+/*   By: rmoriya <rmoriya@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 23:23:45 by rmoriya           #+#    #+#             */
-/*   Updated: 2022/01/29 09:07:16 by rmoriya          ###   ########.fr       */
+/*   Updated: 2022/01/29 17:35:32 by rmoriya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,21 @@ static size_t	ft_words_count(char const *s, char c)
 
 	i = 0;
 	words = 0;
+	if (!c)
+	{
+		words = 1;
+		return (words);
+	}
 	while (s[i])
 	{
 		if (s[i] != c)
 		{
 			words++;
-			while (s[i] != c)
+			while (s[i] != c && s[i])
 				i++;
 		}
-		i++;
+		else
+			i++;
 	}
 	return (words);
 }
