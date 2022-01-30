@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rmoriya <rmoriya@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*   By: rmoriya   <rmoriya@student.42tokyo.jp      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 23:23:45 by rmoriya           #+#    #+#             */
-/*   Updated: 2022/01/30 15:23:08 by rmoriya          ###   ########.fr       */
+/*   Updated: 2022/01/30 19:36:14 by rmoriya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static size_t	ft_words_count(char const *s, char c)
 		if (s[i] != c)
 		{
 			words++;
-			while (s[i] != c && s[i])
+			while (s[i] && s[i] != c)
 				i++;
 		}
 		else
@@ -56,6 +56,7 @@ static char	**ft_free(char **str)
 	while (str[i])
 	{
 		free(str[i]);
+		str[i] = NULL;
 		i++;
 	}
 	free(str);
@@ -75,15 +76,12 @@ static char	**ft_split_word(char const *s, char c, char **str, size_t words)
 			s++;
 		j = s;
 		num = 0;
-		while (*s++ != c)
+		while (*s && *s++ != c)
 			num++;
-		if (*(s - 1) != c)
-		{
-			str[i] = (char *)malloc(sizeof(char *) * (num + 1));
-			if (!str[i])
-				return (ft_free(&str[i]));
-		}
-		str[i++] = ft_put_str((char *)j, num);
+		str[i] = ft_put_str((char *)j, num);
+		if (!str[i])
+			return (ft_free(str));
+		i++;
 	}
 	str[i] = NULL;
 	return (str);
