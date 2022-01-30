@@ -6,12 +6,13 @@
 /*   By: rmoriya <rmoriya@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/29 17:09:55 by rmoriya           #+#    #+#             */
-/*   Updated: 2022/01/29 17:12:02 by rmoriya          ###   ########.fr       */
+/*   Updated: 2022/01/30 15:25:15 by rmoriya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <string.h>
+#include <limits.h>
 
 int main(int argc, char **argv)
 {

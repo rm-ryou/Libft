@@ -6,7 +6,7 @@
 /*   By: rmoriya <rmoriya@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 23:23:45 by rmoriya           #+#    #+#             */
-/*   Updated: 2022/01/29 17:35:32 by rmoriya          ###   ########.fr       */
+/*   Updated: 2022/01/30 15:23:08 by rmoriya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,6 @@ static size_t	ft_words_count(char const *s, char c)
 
 	i = 0;
 	words = 0;
-	if (!c)
-	{
-		words = 1;
-		return (words);
-	}
 	while (s[i])
 	{
 		if (s[i] != c)
