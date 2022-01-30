@@ -6,7 +6,7 @@
 /*   By: rmoriya <rmoriya@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 23:23:45 by rmoriya           #+#    #+#             */
-/*   Updated: 2022/01/29 10:32:17 by rmoriya          ###   ########.fr       */
+/*   Updated: 2022/01/30 19:04:36 by rmoriya          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ char	*ft_int_min(void)
 	if (!str)
 		return (NULL);
 	ft_memcpy(str, "-2147483648", 11);
+	str[11] = '\0';
 	return (str);
 }
 
