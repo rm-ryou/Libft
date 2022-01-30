@@ -76,8 +76,11 @@ static char	**ft_split_word(char const *s, char c, char **str, size_t words)
 			s++;
 		j = s;
 		num = 0;
-		while (*s && *s++ != c)
+		while (*s && *s != c)
+		{
+			s++;
 			num++;
+		}
 		str[i] = ft_put_str((char *)j, num);
 		if (!str[i])
 			return (ft_free(str));
